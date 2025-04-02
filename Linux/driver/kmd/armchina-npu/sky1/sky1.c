@@ -425,7 +425,7 @@ static int sky1_npu_probe(struct platform_device *p_dev)
 	dev_err(&p_dev->dev, "%s: armchina_aipu_probe done\n", __func__); //TODO dbg
 
 #ifdef CONFIG_PM
-    sky1_npu_pm_runtime_put(&p_dev->dev);
+    sky1_npu_pm_runtime_put(&p_dev->dev,NULL);
 #endif /* CONFIG_PM */
 
     return 0;

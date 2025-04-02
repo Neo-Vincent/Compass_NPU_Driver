@@ -43,8 +43,8 @@ struct aipu_soc_operations {
 	int (*disable_clk)(struct device *dev, struct aipu_soc *soc);
 	bool (*is_clk_enabled)(struct device *dev, struct aipu_soc *soc);
 	bool (*is_aipu_irq)(struct device *dev, struct aipu_soc *soc, int core_id);
-	void (*soc_pm_runtime_get_sync)(struct device *dev, struct aipu_soc *soc);
-	void (*soc_pm_runtime_put)(struct device *dev, struct aipu_soc *soc);
+	int (*soc_pm_runtime_get_sync)(struct device *dev, struct aipu_soc *soc);
+	int (*soc_pm_runtime_put)(struct device *dev, struct aipu_soc *soc);
 };
 
 int armchina_aipu_probe(struct platform_device *p_dev, struct aipu_soc *soc,
